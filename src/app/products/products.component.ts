@@ -9,7 +9,9 @@ import { MatSort, MatPaginator } from "@angular/material";
   styleUrls: ["./products.component.css"]
 })
 export class ProductsComponent implements OnInit {
-  displayedColumns: string[] = ["id", "Company", "Product"];
+  displayedColumns: string[] = ["id", "Company", "Product","Type","Inches","Resolution"
+,"CPU","RAM","Memory","Graphics","OpSys","Weight","Price"];
+
   data: Product[] = [];
   isLoadingResults = true;
   dataSource = new MatTableDataSource(this.data);
@@ -19,35 +21,23 @@ export class ProductsComponent implements OnInit {
   @ViewChild(MatSort) set matSort(ms: MatSort) {
     this.sort = ms;
     this.setDataSourceAttributes();
-     }
-     @ViewChild(MatPaginator) paginator: MatPaginator;
+  }
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
-    
-    // @ViewChild(MatPaginator) set matPaginator(mp: MatPaginator) {
-    //  this.matPaginator = mp;
-    // this.setDataSourceAttributes();
-    //  }
-    
-    setDataSourceAttributes() {
-      // this.dataSource.paginator = this.matPaginator;
-      this.dataSource.sort = this.sort;
-      }
+  // @ViewChild(MatPaginator) set matPaginator(mp: MatPaginator) {
+  //  this.matPaginator = mp;
+  // this.setDataSourceAttributes();
+  //  }
 
- 
+  setDataSourceAttributes() {
+    // this.dataSource.paginator = this.matPaginator;
+    this.dataSource.sort = this.sort;
+  }
+
   ngOnInit() {
-    this.data=[{id:0, Company: '',
-      Product: '',
-      Type: '',
-      Inches: '',
-      Resolution: '',
-      CPU: '',
-      RAM: '',
-      Memory: '',
-      Graphics: '',
-      OpSys:'',
-      Weight: '',
-      Price: ''}];
-     
+     this.dataSource.paginator = this.paginator;
+
+
     this.productsApi.getProducts().subscribe(
       res => {
         this.data = res;

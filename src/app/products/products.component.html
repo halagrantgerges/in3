@@ -31,11 +31,77 @@
           <td mat-cell *matCellDef="let row">{{ row.Company }}</td>
         </ng-container>
 
-        <!-- Product Price Column -->
+        <!-- Product Column -->
         <ng-container matColumnDef="Product">
           <th mat-header-cell *matHeaderCellDef>Product</th>
-          <td mat-cell *matCellDef="let row">$ {{ row.Product }}</td>
+          <td mat-cell *matCellDef="let row">{{ row.Product }}</td>
         </ng-container>
+
+          <!-- Product Type Column -->
+          <ng-container matColumnDef="Type">
+            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let row">{{ row.Type }}</td>
+          </ng-container>
+
+
+        
+          <!-- Product Inches Column-->
+          <ng-container matColumnDef="Inches">
+            <th mat-header-cell *matHeaderCellDef>Inches</th>
+            <td mat-cell *matCellDef="let row">{{ row.Inches }}</td>
+          </ng-container>
+
+
+
+          <!-- Product Resolution Column -->
+          <ng-container matColumnDef="Resolution">
+            <th mat-header-cell *matHeaderCellDef>Resolution</th>
+            <td mat-cell *matCellDef="let row">{{ row.Resolution }}</td>
+          </ng-container>
+
+         <!-- Product CPU Column-->
+         <ng-container matColumnDef="CPU">
+          <th mat-header-cell *matHeaderCellDef>CPU</th>
+          <td mat-cell *matCellDef="let row">{{ row.CPU }}</td>
+        </ng-container>
+
+
+   <!-- Product RAM Column-->
+   <ng-container matColumnDef="RAM">
+    <th mat-header-cell *matHeaderCellDef>RAM</th>
+    <td mat-cell *matCellDef="let row">{{ row.RAM }}</td>
+  </ng-container>
+
+   <!-- Product Memory Column-->
+   <ng-container matColumnDef="Memory">
+    <th mat-header-cell *matHeaderCellDef>Memory</th>
+    <td mat-cell *matCellDef="let row">{{ row.Memory }}</td>
+  </ng-container>
+
+   <!-- Product Memory Column-->
+   <ng-container matColumnDef="Graphics">
+    <th mat-header-cell *matHeaderCellDef>Graphics</th>
+    <td mat-cell *matCellDef="let row">{{ row.Graphics }}</td>
+  </ng-container>
+
+        <!-- Product OpSys Column-->
+   <ng-container matColumnDef="OpSys">
+    <th mat-header-cell *matHeaderCellDef>OpSys</th>
+    <td mat-cell *matCellDef="let row">{{ row.OpSys }}</td>
+  </ng-container>
+
+      <!-- Product Weight Column-->
+   <ng-container matColumnDef="Weight">
+    <th mat-header-cell *matHeaderCellDef>Weight</th>
+    <td mat-cell *matCellDef="let row">{{ row.Weight }}</td>
+  </ng-container>
+   
+        <!-- Product Price Column-->
+   <ng-container matColumnDef="Price">
+    <th mat-header-cell *matHeaderCellDef>Price</th>
+    <td mat-cell *matCellDef="let row">{{ row.Price }}</td>
+  </ng-container>
+        
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr
