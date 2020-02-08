@@ -1,4 +1,4 @@
-export class Product {
+export interface Product {
   /*
   CREATE TABLE `sys`.`in3` (
   `id` INT NOT NULL AUTO_INCREMENT,

@@ -10,15 +10,8 @@
       </mat-form-field>
     </div>
     <div class="mat-elevation-z8">
-      <table
-        mat-table
-        [dataSource]="data"
-        class="example-table"
-        matSort
-        matSortActive="Company"
-        matSortDisableClear
-        matSortDirection="asc"
-      >
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <!-- Product Name Column -->
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef>id</th>
