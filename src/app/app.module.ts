@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -19,11 +19,16 @@ import {
   MatCardModule,
   MatFormFieldModule
 } from "@angular/material";
+import { ProductsMobileComponent } from "./products-mobile/products-mobile.component";
+import { IgxListModule, IgxIconModule } from "igniteui-angular";
+import { IgxFilterModule, IgxInputGroupModule } from "igniteui-angular";
+
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    ProductSearchBarComponent
+    ProductSearchBarComponent,
+    ProductsMobileComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +45,13 @@ import {
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    IgxListModule,
+    IgxFilterModule,
+    IgxInputGroupModule,
+    IgxIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
