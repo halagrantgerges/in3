@@ -2,13 +2,13 @@
    <div class="col-2">
     <!-- <form class="form-inline waves-light" mdbWavesEffect> -->
 <div class="row">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search Company" />
+    <input class="form-control mr-sm-2" type="text" placeholder="Search Company" [(ngModel)]="CompanySearch" />
 
   </div>
   <hr/>
 
   <div class="row">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search Product" />
+    <input class="form-control mr-sm-2" type="text" placeholder="Search Product"  [(ngModel)]="ProductSearch"/>
 
   </div>
   <hr/>
@@ -86,6 +86,7 @@
 
 <div class="row">
   <button
+  (click)="searchProductsAPI();"
       mdbBtn
       size="sm"
       gradient="aqua"

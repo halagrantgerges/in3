@@ -24,12 +24,12 @@ export class ProductsService {
   }
 
 
-getProduct(id: number): Observable<Product> {
-  const url = `${apiUrl}Company=${id}`;
-  return this.http.get<Product>(url).pipe(
-    tap(_ => console.log(`fetched product id=${id}`)),
-    catchError(this.handleError<Product>(`getProduct id=${id}`))
-  );
+getFeaturedProducts(body:{}): Observable<Product[]> {
+  return this.http.post<Product[]>(apiUrl,body)
+    .pipe(
+      tap(heroes => console.log('fetched products')),
+      catchError(this.handleError('getProducts', []))
+    );
 }
 
 
