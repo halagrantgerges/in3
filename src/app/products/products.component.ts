@@ -4,6 +4,7 @@ import { Product } from "./product";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatSort, MatPaginator } from "@angular/material";
 import { IgxFilterOptions } from 'igniteui-angular';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 let data: Product[];
 
@@ -13,6 +14,7 @@ let data: Product[];
   styleUrls: ["./products.component.css"]
 })
 export class ProductsComponent implements OnInit {
+  deviceInfo = null;
   products :Product[];
   displayedColumns: string[] = [
     "id",
@@ -32,11 +34,17 @@ export class ProductsComponent implements OnInit {
   public searchProducts: string;
   isLoadingResults = true;
   dataSource = new MatTableDataSource(data);
-  constructor(private productsApi: ProductsService) {}
-
+  constructor(private productsApi: ProductsService,private deviceService: DeviceDetectorService) {}
+  isMobile:Boolean;
+  isDesktopDevice:Boolean;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
+
+    this.deviceInfo = this.deviceService.getDeviceInfo();
+    this.isMobile = this.deviceService.isMobile();
+    this.isDesktopDevice = this.deviceService.isDesktop()||this.deviceService.isTablet();
+
     this.dataSource.paginator = this.paginator;
     this.productsApi.getProducts().subscribe(
       res => {

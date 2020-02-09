@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="isDesktopDevice">
   <div class="example-container mat-elevation-z8">
     <div class="example-loading-shade" *ngIf="isLoadingResults">
       <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
@@ -108,7 +108,7 @@
     </div>
   </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="isMobile">
 
 
 <igx-input-group type="search" class="search">

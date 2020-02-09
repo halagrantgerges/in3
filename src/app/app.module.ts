@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
+import { DeviceDetectorModule } from 'ngx-device-detector';
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ProductsComponent } from "./products/products.component";
@@ -28,7 +28,7 @@ import { IgxFilterModule, IgxInputGroupModule } from "igniteui-angular";
     AppComponent,
     ProductsComponent,
     ProductSearchBarComponent,
-    ProductsMobileComponent
+    ProductsMobileComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +49,8 @@ import { IgxFilterModule, IgxInputGroupModule } from "igniteui-angular";
     IgxListModule,
     IgxFilterModule,
     IgxInputGroupModule,
-    IgxIconModule
+    IgxIconModule,
+    DeviceDetectorModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
