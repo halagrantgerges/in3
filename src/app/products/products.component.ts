@@ -42,7 +42,7 @@ export class ProductsComponent implements OnInit {
   isDesktopDevice: Boolean;
   ProductSearch: String;
   CompanySearch: string;
-  CPU_Intel : boolean;
+  CPU_Core : boolean;
   CPU_Atom : boolean;
   CPU_AMD : boolean;
   RAM_2G : boolean;
@@ -89,13 +89,13 @@ export class ProductsComponent implements OnInit {
     //TODO change the class of the li to active
   }
   searchProductsAPI() {
-    console.log("hello searcher", this.ProductSearch, this.CompanySearch,this.CPU_Intel,this.CPU_Atom,this.CPU_AMD);
+    console.log("hello searcher", this.ProductSearch, this.CompanySearch,this.CPU_Core,this.CPU_Atom,this.CPU_AMD);
     let body={
       Company:this.CompanySearch,
       Product:this.ProductSearch,
       RAM:(this.RAM_2G?'2G,':'')+(this.RAM_4G?'4G,':'')+(this.RAM_8G?'8G,':'')+(this.RAM_16G?'16G,':''),
-      CPU:(this.CPU_AMD?'CPU_AMD,':'')+(this.CPU_Atom?'CPU_Atom,':'')+(this.CPU_Intel?'CPU_Intel,':''),
-      OpSys:(this.OpSys_Mac?'OpSys_Mac,':'')+(this.OpSys_Windows?'OpSys_Windows,':'')
+      CPU:(this.CPU_AMD?'AMD,':'')+(this.CPU_Atom?'Atom,':'')+(this.CPU_Core?'Core,':''),
+      OpSys:(this.OpSys_Mac?'mac,':'')+(this.OpSys_Windows?'Windows,':'')
     }
     this.productsApi.getFeaturedProducts(body).subscribe(
       res => {
