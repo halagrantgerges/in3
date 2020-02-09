@@ -45,10 +45,11 @@ export class ProductsComponent implements OnInit {
     this.isMobile = this.deviceService.isMobile();
     this.isDesktopDevice = this.deviceService.isDesktop()||this.deviceService.isTablet();
 
-    this.dataSource.paginator = this.paginator;
+   
     this.productsApi.getProducts().subscribe(
       res => {
         this.dataSource.data = res as Product[];
+        this.dataSource.paginator = this.paginator;
         this.products=res;
         console.log(res);
         this.isLoadingResults = false;

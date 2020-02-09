@@ -20,7 +20,7 @@ import {
   MatFormFieldModule
 } from "@angular/material";
 import { ProductsMobileComponent } from "./products-mobile/products-mobile.component";
-import { IgxListModule, IgxIconModule } from "igniteui-angular";
+import { IgxListModule, IgxIconModule, IgxExpansionPanelModule } from "igniteui-angular";
 import { IgxFilterModule, IgxInputGroupModule } from "igniteui-angular";
 
 @NgModule({
@@ -50,7 +50,8 @@ import { IgxFilterModule, IgxInputGroupModule } from "igniteui-angular";
     IgxFilterModule,
     IgxInputGroupModule,
     IgxIconModule,
-    DeviceDetectorModule.forRoot()
+    DeviceDetectorModule.forRoot(),
+    IgxExpansionPanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
